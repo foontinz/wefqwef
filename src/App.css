@@ -1,0 +1,230 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  color: #666;
+}
+
+main {
+  flex: 1;
+}
+
+/* Action Bar */
+.actions-bar {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .actions-bar {
+    flex-direction: column;
+  }
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Status Messages */
+.error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--danger-color);
+  padding: 0.8rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--danger-color);
+}
+
+.loading {
+  text-align: center;
+  padding: 1rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Add Source Form */
+.add-source-form {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.add-source-form h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input, select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.submit-btn {
+  background-color: var(--secondary-color);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Sources Container */
+.sources-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  overflow-x: auto; /* For responsive tables */
+}
+
+.sources-container h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.no-sources {
+  text-align: center;
+  color: #999;
+  padding: 2rem 0;
+}
+
+/* Table Styling */
+.sources-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sources-table th,
+.sources-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.sources-table th {
+  font-weight: 600;
+  color: #555;
+  background-color: var(--light-gray);
+}
+
+.sources-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sources-table tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* Health Status */
+.healthy {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.unhealthy {
+  color: var(--danger-color);
+  font-weight: 600;
+}
+
+/* Download Button */
+.download-btn {
+  background-color: var(--warning-color);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.download-btn:hover {
+  background-color: #e67e22;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #999;
+  font-size: 0.875rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--medium-gray);
+}
